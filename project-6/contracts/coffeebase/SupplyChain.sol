@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.24;
+pragma solidity >=0.5.16;
 
 // importing the actors and ownable
 import "../coffeecore/Ownable.sol";
@@ -98,7 +98,7 @@ contract SupplyChain is
         _;
         uint256 _price = items[_upc].productPrice;
         uint256 amountToReturn = msg.value - _price;
-        items[_upc].consumerID.transfer(amountToReturn);
+        payable(items[_upc].consumerID).transfer(amountToReturn);
     }
 
     // Define a modifier that checks if an item.state of a upc is Harvested
@@ -256,7 +256,7 @@ contract SupplyChain is
         items[_upc].itemState = State.Sold;
 
         // Transfer money to farmer
-        items[_upc].distributorID.transfer(items[_upc].productPrice);
+        payable(items[_upc].distributorID).transfer(items[_upc].productPrice);
 
         // emit the appropriate event
         emit Sold(_upc);
