@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.24;
+pragma solidity >=0.8.0;
 
 // importing the actors and ownable
 import "../coffeecore/Ownable.sol";
@@ -17,7 +17,7 @@ contract SupplyChain is
     ConsumerRole
 {
     // Define 'owner' and make owner payable
-    // address owner;
+    address payable owner;
 
     // Define a variable called 'upc' for Universal Product Code (UPC)
     uint256 upc;
@@ -98,7 +98,7 @@ contract SupplyChain is
         _;
         uint256 _price = items[_upc].productPrice;
         uint256 amountToReturn = msg.value - _price;
-        items[_upc].consumerID.transfer(amountToReturn);
+        payable (items[_upc].consumerID).transfer(amountToReturn);
     }
 
     // Define a modifier that checks if an item.state of a upc is Harvested
@@ -153,7 +153,7 @@ contract SupplyChain is
     // and set 'sku' to 1
     // and set 'upc' to 1
     constructor() payable {
-        //owner = (msg.sender);
+        // owner = (msg.sender);
         sku = 1;
         upc = 1;
     }
@@ -245,8 +245,10 @@ contract SupplyChain is
         payable
         // Call modifier to check if upc has passed previous supply chain stage
         forSale(_upc)
+
         // Call modifer to check if buyer has paid enough
         paidEnough(items[_upc].productPrice)
+
         // Call modifer to send any excess ether back to buyer
         checkValue(_upc)
     {
@@ -256,7 +258,7 @@ contract SupplyChain is
         items[_upc].itemState = State.Sold;
 
         // Transfer money to farmer
-        items[_upc].distributorID.transfer(items[_upc].productPrice);
+        payable(items[_upc].distributorID).transfer(items[_upc].productPrice);
 
         // emit the appropriate event
         emit Sold(_upc);
@@ -301,7 +303,7 @@ contract SupplyChain is
     {
         // Update the appropriate fields - ownerID, consumerID, itemState
         items[_upc].ownerID = msg.sender;
-        items[_upc].retailerID = msg.sender;
+        items[_upc].consumerID = msg.sender;
         items[_upc].itemState = State.Purchased;
         // Emit the appropriate event
         emit Purchased(_upc);
