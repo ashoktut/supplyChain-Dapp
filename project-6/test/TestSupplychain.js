@@ -51,8 +51,7 @@ contract('SupplyChain', function(accounts) {
         var eventEmitted = false
         
         // Watch the emitted event Harvested()
-        var event = supplyChain.Harvested()
-        await event.watch((err, res) => {
+        supplyChain.Harvested(null, (error, event)=>{
             eventEmitted = true
         })
 
@@ -89,11 +88,9 @@ contract('SupplyChain', function(accounts) {
         var eventEmitted = false
         
         // Watch the emitted event Processed()
-        var event = supplyChain.Processed();
-        await event.watch((err, res) => {
+        supplyChain.Processed(null, (error, event)=>{
             eventEmitted = true
         })
-        
 
         // Mark an item as Processed by calling function processtItem()
         let result = await supplyChain.processItem(upc, {from: originFarmerID})
@@ -114,8 +111,7 @@ contract('SupplyChain', function(accounts) {
         var eventEmitted = false
         
         // Watch the emitted event Packed()
-        var event = supplyChain.Packed();
-        await event.watch((err, res) => {
+        supplyChain.Packed(null, (error, event)=>{
             eventEmitted = true
         })
 
@@ -138,8 +134,7 @@ contract('SupplyChain', function(accounts) {
         var eventEmitted = false
         
         // Watch the emitted event ForSale()
-        var event = supplyChain.ForSale();
-        await event.watch((err, res) => {
+        supplyChain.ForSale(null, (error, event)=>{
             eventEmitted = true
         })
 
@@ -163,8 +158,7 @@ contract('SupplyChain', function(accounts) {
         var eventEmitted = false
         
         // Watch the emitted event Sold()
-        var event = supplyChain.Sold()
-        await event.watch((err, res) => {
+        supplyChain.Sold(null, (error, event)=>{
             eventEmitted = true
         })
 
@@ -190,8 +184,7 @@ contract('SupplyChain', function(accounts) {
         var eventEmitted = false
         
         // Watch the emitted event Shipped()
-        var event = supplyChain.Shipped()
-        await event.watch((err, res) => {
+        supplyChain.Shipped(null, (error, event)=>{
             eventEmitted = true
         })
 
@@ -215,8 +208,7 @@ contract('SupplyChain', function(accounts) {
         var eventEmitted = false
         
         // Watch the emitted event Received()
-        var event = supplyChain.Received()
-        await event.watch((err, res) => {
+        supplyChain.Received(null, (error, event)=>{
             eventEmitted = true
         })
 
@@ -244,8 +236,7 @@ contract('SupplyChain', function(accounts) {
         var eventEmitted = false
         
         // Watch the emitted event Purchased()
-        var event = supplyChain.Purchased()
-        await event.watch((err, res) => {
+        supplyChain.Purchased(null, (error, event)=>{
             eventEmitted = true
         })
         
