@@ -27,7 +27,7 @@ Give examples (to be clarified)
 
 ### Installing
 
-> The starter code is written for **Solidity v0.4.24**. At the time of writing, the current Truffle v5 comes with Solidity v0.5 that requires function *mutability* and *visibility* to be specified (please refer to Solidity [documentation](https://docs.soliditylang.org/en/v0.5.0/050-breaking-changes.html) for more details). To use this starter code, please run `npm i -g truffle@4.1.14` to install Truffle v4 with Solidity v0.4.24. 
+> The starter code is written for **Solidity v0.8.0**. At the time of writing, the current Truffle v5 comes with Solidity v0.5 that requires function *mutability* and *visibility* to be specified (please refer to Solidity [documentation](https://docs.soliditylang.org/en/v0.5.0/050-breaking-changes.html) for more details). To use this starter code, please run `npm i -g truffle` to install Truffle with Solidity v0.8.0. 
 
 A step by step series of examples that tell you have to get a development env running
 
@@ -83,6 +83,8 @@ truffle test
 ```
 
 All 10 tests should pass.
+
+![truffle test](images/truffle_test_1a.png)
 
 ![truffle test](images/truffle_test.png)
 
