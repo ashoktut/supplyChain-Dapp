@@ -12,6 +12,15 @@ The DApp User Interface when running should look like...
 
 ![truffle test](images/ftc_transaction_history.png)
 
+## UML Diagrams
+
+![uml diagram](images/Activity_Diagram.png)
+
+![uml diagram](images/Sequence_Diagram.png)
+
+![uml diagram](images/State_Diagram.png)
+
+![uml diagram](images/Class_Diagram.png)
 
 ## Getting Started
 
@@ -101,14 +110,14 @@ npm run dev
 to make the web faster, safer, and more open.
 * [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
+## Versions Used
+
+Truffle v5.5.28 (core: 5.5.28)
+Ganache v7.4.0
+Solidity - 0.8.0 (solc-js)
+Node v14.17.0
+Web3.js v1.7.4
 
 ## Authors
 
-See also the list of [contributors](https://github.com/your/project/contributors.md) who participated in this project.
-
-## Acknowledgments
-
-* Solidity
-* Ganache-cli
-* Truffle
-* IPFS
+Ashok
