@@ -103,6 +103,14 @@ In a separate terminal window, launch the DApp:
 npm run dev
 ```
 
+## Etherscan Proof for Contract Deployment on Rinkeby Network
+
+```
+https://rinkeby.etherscan.io/address/0xB38B65169e77cD9A8dc6b64B69A73c114512c003
+```
+
+![Etherscan Proof](images/etherscan.png)
+
 ## Built With
 
 * [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
